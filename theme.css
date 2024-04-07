@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'TasksMonoEmojis';
+    src: url('data:@file/octet-stream;base64,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') format('woff2');
+    unicode-range: U+1F4C5, U+1F501, U+1F517, U+1F53A, U+1F53C, U+1F53D, U+1F6EB, U+23EB, U+23EC, U+23F3, U+2705, U+2795;
+    /* 📅, 🔁, 🔗, 🔺, 🔼, 🔽, 🛫, ⏫, ⏬, ⏳, ✅, ➕ */
+    /*! Generator: obsidian-tasks-custom-icons v1.0.3 https://github.com/replete/obsidian-tasks-custom-icons */
+}
+
+
+span.tasks-list-text,
+.cm-line:has(.task-list-label) [class^=cm-list-] {
+    font-family: 'TasksMonoEmojis', var(--font-text);
+}
+
+/* Priority as color */
+.task-list-item[data-task-priority=highest] input[type=checkbox] {
+    box-shadow: 0px 0px 3px 3px var(--color-red);
+    border-color: var(--color-red);
+}
+.task-list-item[data-task-priority=high] input[type=checkbox] {
+    box-shadow: 0px 0px 3px 3px var(--color-orange);
+    border-color: var(--color-orange);
+}
+.task-list-item[data-task-priority=medium] input[type=checkbox] {
+    box-shadow: 0px 0px 3px 3px var(--color-yellow);
+    border-color: var(--color-yellow);
+}
+.task-list-item[data-task-priority=low] input[type=checkbox] {
+    box-shadow: 0px 0px 3px 3px var(--color-blue);
+    border-color: var(--color-blue);
+}
+.task-list-item[data-task-priority=lowest] input[type=checkbox] {
+    box-shadow: 0px 0px 3px 3px var(--color-blue);
+    border-color: var(--color-blue);
+    opacity:0.6
+}
+.task-list-item[data-task-priority=lowest] .task-description {
+    opacity:0.6
+}
+.task-priority {
+    display: none;
+}
+input[type=checkbox]:checked {
+    box-shadow: none !important;
+    border-color: var(--checkbox-border-color) !important;
+}
+
+.task-description {
+    margin-right:3px;
+}
+
+/* Show dates hover */
+:is(.task-recurring, .task-start, .task-scheduled, .task-done, .task-created, .task-due) {
+    font-size: 1px;
+    letter-spacing: -1px;
+    color: transparent;
+    background-color: transparent;
+}
+:is(.task-recurring, .task-start, .task-scheduled,.task-done, .task-created, .task-due)::after {
+    letter-spacing: 0px;
+    font-size: var(--font-adaptive-normal, 1rem);
+    line-height: var(--line-height);
+    color: var(--tx1, var(--text-normal));
+    margin-left: 3px;
+}
+.task-recurring::after {
+    content: "🔁";
+}
+.task-start::after {
+    content: "🛫";
+}
+.task-scheduled::after {
+    content: "⏳";
+}
+.task-done::after {
+    content: "✅";
+}
+.task-created::after {
+    content: "➕";
+}
+.task-due::after {
+    content: "📅";
+}
+
+.plugin-tasks-query-result [class^=task-]::after {
+    cursor: default !important;
+    opacity:0.6
+}
+
+:is(.task-recurring, .task-start, .task-scheduled, .task-done, .task-created, .task-due):hover::after {
+    opacity:1;
+}
+
+:is(.task-recurring, .task-start, .task-scheduled, .task-done, .task-created, .task-due):hover span {
+    position:absolute;
+    display:inline-block;
+    flex-grow:1;
+    letter-spacing: 0px;
+    font-size: var(--font-adaptive-small, 0.8rem);
+    line-height: var(--line-height, 20px);
+    color: var(--tx1, var(--text-normal));
+    background:var(--bg2, var(--background-primary));
+    border-radius:4px;
+    outline:1px solid var(--tx3, var(--text-faint));
+    margin-left:10px;
+    padding-left:2px;
+    padding-right:4px;
+    min-width:7rem;
+    width: fit-content;
+    pointer-events:none;
+    z-index:1000;
+    box-shadow:2px 2px 3px var(--bg2, var(--background-primary)), 0 0 7px var(--bg2, var(--background-primary));
+    line-height:1.2em;
+    margin-top:1.5rem;
+    margin-left:2px;
+}
+
+/* Visually flag overdue actionable tasks*/
+:is(.task-list-item[data-task-status-type="TODO"] .task-start[data-task-due^="past-"], .task-list-item[data-task-status-type="TODO"] .task-scheduled[data-task-due^="past-"], .task-list-item[data-task-status-type="TODO"] .task-due[data-task-due^="past-"], .task-list-item[data-task-status-type="IN_PROGRESS"] .task-start[data-task-due^="past-"], .task-list-item[data-task-status-type="IN_PROGRESS"] .task-scheduled[data-task-due^="past-"], .task-list-item[data-task-status-type="IN_PROGRESS"] .task-due[data-task-due^="past-"])::after {
+    color: #FFFFFF;
+	background-color: #f00;
+	opacity:1;
+	padding: 0 2px;
+	border-radius:4px;
+}
+
+/* Edit button */
+.tasks-edit {
+    /* https://caniuse.com/?search=mask-image */
+    -webkit-mask-image: url('data:image/svg+xml,<svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>');
+}
+
+/* Postpone button */
+.tasks-postpone {
+    /* https://caniuse.com/?search=mask-image */
+    -webkit-mask-image: url('data:image/svg+xml,<svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><polygon points="13 19 22 12 13 5 13 19"/><polygon points="2 19 11 12 2 5 2 19"/></svg>');
+}
+
+/* Backlink button - Collapse it to 'icon' size */
+.tasks-backlink {
+    text-indent:100%;
+	white-space: nowrap;
+    overflow: hidden;
+	color: transparent;
+	margin-left:-5px;
+	margin-right:-5px;
+	
+}
+
+/* Backlink button - replace the default emoji */
+.tasks-backlink .internal-link {
+    -webkit-mask-image: url('data:image/svg+xml,<svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>');
+	height: 1em;
+	width: 1em;
+	opacity: 0.6;
+}
+
+/* Combine some shared stylings */
+.tasks-backlink .internal-link:hover { opacity:1;}
+.tasks-edit, .tasks-postpone, .tasks-backlink .internal-link{display: inline-block; opacity:0.6; margin-left: 5px; -webkit-mask-size: contain; background-color: var(--tx1, var(--text-normal));vertical-align:middle;}
+.tasks-edit:hover, .tasks-postpone:hover, .tasks-backlink .internal-link:hover{opacity: 1;}
+.tasks-edit::after, .tasks-postpone::after, .tasks-backlink .internal-link::after {content:none;}
+
+/* .plugin-tasks-query-result .tasks-backlink {
+    float:right;
+} */
+
+
+/* Most of my customizations for Obsidian via CSS are here */
+
+/* Learn more if you need to - https://www.nordtheme.com/docs/colors-and-palettes 
+I don't use these currently, just too lazy to remove in case I have ref'd them somewhere*/
+:root{
+	--nord0: #2e3440;
+	--nord1: #3b4252;
+	--nord2: #434c5e;
+	--nord3: #4c566a;
+	--nord4: #d8dee9;
+	--nord5: #e5e9f0;
+	--nord6: #eceff4;
+	--nord7: #8fbcbb;
+	--nord8: #88c0d0;
+	--nord9: #81a1c1;
+	--nord10: #5e81ac;
+	--nord11: #bf616a;
+	--nord12: #d08770;
+	--nord13: #ebcb8b;
+	--nord14: #a3be8c;
+	--nord15: #b48ead;
+}
+
+/* I want to see the weekends, no one has options to see these anymore, not gMail, Outlook, or anything in Obsidian. */
+#calendar-container .weekend {
+  background-color: #2E3132 !important;	
+}
+/* Better dot colors for my Minimal theme config */
+.dot.filled { fill: #647B83 !important;
+}
+.hollow.task {stroke: #009EBC !important;
+}
+
+#calendar-container tr td {
+	border-radius: 0px !important;
+}
+
+.callout {
+	margin:0;
+}
+
+/* Turning tasks backlink into an emoji instead of written text. Much cleaner interface. See my Tasks - Compact.css for the rest of the compactness styling */
+
+.tasks-backlink {
+    color: #191C1D;
+}
+
+.tasks-backlink a.internal-link {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
+	height: .9em;
+	opacity: 0.6;
+}
+
+.tasks-backlink a.internal-link:hover { opacity:1;}
+
+/* I used to color code my main tags, but I don't anymore. Kept here in case I change my mind because ya never know */
+.cm-tag-journaldaily, .cm-tag-journalweekly, .cm-tag-journalmonthly, .cm-tag-journalyearly, span[class*=cm-tag-journal], .tag[href*="#journal"] {
+  /* background-color: var(--nord14) !important; */
+  /* color: #B2CAD3; */
+}
+span[class*=cm-tag-task], .tag[href*="#task"]  {
+  /* background-color: var(--nord3) !important; */
+  /* color: #E99B19; */
+}
+span[class*=cm-tag-area], .tag[href*="#area"] {
+  /* background-color: var(--nord3) !important; */
+  /* color: #A5A9CE; */
+}
+span[class*=cm-tag-on], .tag[href*="#on"] {
+  /* background-color: var(--nord3) !important; */
+  /* color: #CEFFB8; */
+}
+span[class*=cm-tag-project], .tag[href*="#project"] {
+  /* background-color: var(--nord3) !important; */
+  /* color: #58D6F7; */
+}
+span[class*=cm-tag-idea], .tag[href*="#idea"] {
+  /* background-color: var(--nord3) !important; */
+  /* color: #FF897F; */
+}
+span[class*=cm-tag-source], .tag[href*="#source"] {
+  /* background-color: var(--nord3) !important; */
+  /* color: #FF897F; */
+}
+span[class*=cm-tag-reference], .tag[href*="#reference"], span[class*=cm-tag-archive], .tag[href*="#archive"] {
+  /* background-color: var(--nord3) !important; */
+  /* color: #A9ABAD; */
+}
+
+/* I USE HIDER PLUGIN SO THIS ISN'T NEEDED NOW
+Show Properties in reading mode by default.
+Use "hide_properties" in `css_classes` property to hide them.
+============================================================= */
+/* .workspace-leaf-content[data-mode="preview"]
+.markdown-preview-view.hide_properties
+.metadata-container{
+    display: none;
+} */
+
+/* Psudo 'Swimlanes' for Kanban, wish the Dev would implement this (and better)! */
+
+.kanban-plugin__board > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+}
+.kanban-plugin__scroll-container.kanban-plugin__horizontal {
+    overflow-y: auto;
+}

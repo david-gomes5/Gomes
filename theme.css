@@ -12,41 +12,61 @@ span.tasks-list-text,
     font-family: 'TasksMonoEmojis', var(--font-text);
 }
 
-/* Priority as color */
-.task-list-item[data-task-priority=highest] input[type=checkbox] {
-    box-shadow: 0px 0px 3px 3px var(--color-red);
-    border-color: var(--color-red);
+/* MARK: task-list-item */
+.task-list-item {
+    & input[type=checkbox] {
+        border-radius: 10px;
+    }
+
+    --priority-shadow: 0px 0px 2px 1px;
+
+    /* MARK: Start of Priority as colour */
+    &[data-task-priority=highest] input[type=checkbox] {
+        box-shadow: var(--priority-shadow) var(--color-red);
+        border-color: var(--color-red);
+    }
+
+    &[data-task-priority=high] input[type=checkbox] {
+        box-shadow: var(--priority-shadow) var(--color-orange);
+        border-color: var(--color-orange);
+    }
+
+    &[data-task-priority=medium] input[type=checkbox] {
+        box-shadow: var(--priority-shadow) var(--color-yellow);
+        border-color: var(--color-yellow);
+    }
+
+    &[data-task-priority=low] input[type=checkbox] {
+        box-shadow: var(--priority-shadow) var(--color-blue);
+        border-color: var(--color-blue);
+    }
+
+    &[data-task-priority=lowest] input[type=checkbox] {
+        box-shadow: var(--priority-shadow) var(--color-blue);
+        border-color: var(--color-blue);
+        opacity: 0.6
+    }
+
+    &[data-task-priority=lowest] .task-description {
+        opacity: 0.6
+    }
+
+    /* Hide priority for done tasks */
+    input[type=checkbox]:checked {
+        box-shadow: none !important;
+        border-color: var(--checkbox-border-color) !important;
+    }
+
+    /* MARK: End of Priority as colour */
 }
-.task-list-item[data-task-priority=high] input[type=checkbox] {
-    box-shadow: 0px 0px 3px 3px var(--color-orange);
-    border-color: var(--color-orange);
-}
-.task-list-item[data-task-priority=medium] input[type=checkbox] {
-    box-shadow: 0px 0px 3px 3px var(--color-yellow);
-    border-color: var(--color-yellow);
-}
-.task-list-item[data-task-priority=low] input[type=checkbox] {
-    box-shadow: 0px 0px 3px 3px var(--color-blue);
-    border-color: var(--color-blue);
-}
-.task-list-item[data-task-priority=lowest] input[type=checkbox] {
-    box-shadow: 0px 0px 3px 3px var(--color-blue);
-    border-color: var(--color-blue);
-    opacity:0.6
-}
-.task-list-item[data-task-priority=lowest] .task-description {
-    opacity:0.6
-}
+
+
 .task-priority {
     display: none;
 }
-input[type=checkbox]:checked {
-    box-shadow: none !important;
-    border-color: var(--checkbox-border-color) !important;
-}
 
 .task-description {
-    margin-right:3px;
+    margin-right: 3px;
 }
 
 /* Show dates hover */
@@ -56,72 +76,79 @@ input[type=checkbox]:checked {
     color: transparent;
     background-color: transparent;
 }
-:is(.task-recurring, .task-start, .task-scheduled,.task-done, .task-created, .task-due)::after {
+
+:is(.task-recurring, .task-start, .task-scheduled, .task-done, .task-created, .task-due)::after {
     letter-spacing: 0px;
     font-size: var(--font-adaptive-normal, 1rem);
     line-height: var(--line-height);
     color: var(--tx1, var(--text-normal));
     margin-left: 3px;
 }
+
 .task-recurring::after {
     content: "🔁";
 }
+
 .task-start::after {
     content: "🛫";
 }
+
 .task-scheduled::after {
     content: "⏳";
 }
+
 .task-done::after {
     content: "✅";
 }
+
 .task-created::after {
     content: "➕";
 }
+
 .task-due::after {
     content: "📅";
 }
 
 .plugin-tasks-query-result [class^=task-]::after {
     cursor: default !important;
-    opacity:0.6
+    opacity: 0.6
 }
 
 :is(.task-recurring, .task-start, .task-scheduled, .task-done, .task-created, .task-due):hover::after {
-    opacity:1;
+    opacity: 1;
 }
 
 :is(.task-recurring, .task-start, .task-scheduled, .task-done, .task-created, .task-due):hover span {
-    position:absolute;
-    display:inline-block;
-    flex-grow:1;
+    position: absolute;
+    display: inline-block;
+    flex-grow: 1;
     letter-spacing: 0px;
     font-size: var(--font-adaptive-small, 0.8rem);
     line-height: var(--line-height, 20px);
     color: var(--tx1, var(--text-normal));
-    background:var(--bg2, var(--background-primary));
-    border-radius:4px;
-    outline:1px solid var(--tx3, var(--text-faint));
-    margin-left:10px;
-    padding-left:2px;
-    padding-right:4px;
-    min-width:7rem;
+    background: var(--bg2, var(--background-primary));
+    border-radius: 4px;
+    outline: 1px solid var(--tx3, var(--text-faint));
+    margin-left: 10px;
+    padding-left: 2px;
+    padding-right: 4px;
+    min-width: 7rem;
     width: fit-content;
-    pointer-events:none;
-    z-index:1000;
-    box-shadow:2px 2px 3px var(--bg2, var(--background-primary)), 0 0 7px var(--bg2, var(--background-primary));
-    line-height:1.2em;
-    margin-top:1.5rem;
-    margin-left:2px;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 2px 2px 3px var(--bg2, var(--background-primary)), 0 0 7px var(--bg2, var(--background-primary));
+    line-height: 1.2em;
+    margin-top: 1.5rem;
+    margin-left: 2px;
 }
 
 /* Visually flag overdue actionable tasks*/
 :is(.task-list-item[data-task-status-type="TODO"] .task-start[data-task-due^="past-"], .task-list-item[data-task-status-type="TODO"] .task-scheduled[data-task-due^="past-"], .task-list-item[data-task-status-type="TODO"] .task-due[data-task-due^="past-"], .task-list-item[data-task-status-type="IN_PROGRESS"] .task-start[data-task-due^="past-"], .task-list-item[data-task-status-type="IN_PROGRESS"] .task-scheduled[data-task-due^="past-"], .task-list-item[data-task-status-type="IN_PROGRESS"] .task-due[data-task-due^="past-"])::after {
     color: #FFFFFF;
-	background-color: #f00;
-	opacity:1;
-	padding: 0 2px;
-	border-radius:4px;
+    background-color: #f00;
+    opacity: 1;
+    padding: 0 2px;
+    border-radius: 4px;
 }
 
 /* Edit button */
@@ -138,28 +165,50 @@ input[type=checkbox]:checked {
 
 /* Backlink button - Collapse it to 'icon' size */
 .tasks-backlink {
-    text-indent:100%;
-	white-space: nowrap;
+    text-indent: 100%;
+    white-space: nowrap;
     overflow: hidden;
-	color: transparent;
-	margin-left:-5px;
-	margin-right:-5px;
-	
+    color: transparent;
+    margin-left: -5px;
+    margin-right: -5px;
+
 }
 
 /* Backlink button - replace the default emoji */
 .tasks-backlink .internal-link {
     -webkit-mask-image: url('data:image/svg+xml,<svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>');
-	height: 1em;
-	width: 1em;
-	opacity: 0.6;
+    height: 1em;
+    width: 1em;
+    opacity: 0.6;
 }
 
 /* Combine some shared stylings */
-.tasks-backlink .internal-link:hover { opacity:1;}
-.tasks-edit, .tasks-postpone, .tasks-backlink .internal-link{display: inline-block; opacity:0.6; margin-left: 5px; -webkit-mask-size: contain; background-color: var(--tx1, var(--text-normal));vertical-align:middle;}
-.tasks-edit:hover, .tasks-postpone:hover, .tasks-backlink .internal-link:hover{opacity: 1;}
-.tasks-edit::after, .tasks-postpone::after, .tasks-backlink .internal-link::after {content:none;}
+.tasks-backlink .internal-link:hover {
+    opacity: 1;
+}
+
+.tasks-edit,
+.tasks-postpone,
+.tasks-backlink .internal-link {
+    display: inline-block;
+    opacity: 0.6;
+    margin-left: 5px;
+    -webkit-mask-size: contain;
+    background-color: var(--tx1, var(--text-normal));
+    vertical-align: middle;
+}
+
+.tasks-edit:hover,
+.tasks-postpone:hover,
+.tasks-backlink .internal-link:hover {
+    opacity: 1;
+}
+
+.tasks-edit::after,
+.tasks-postpone::after,
+.tasks-backlink .internal-link::after {
+    content: none;
+}
 
 /* .plugin-tasks-query-result .tasks-backlink {
     float:right;
@@ -170,41 +219,45 @@ input[type=checkbox]:checked {
 
 /* Learn more if you need to - https://www.nordtheme.com/docs/colors-and-palettes 
 I don't use these currently, just too lazy to remove in case I have ref'd them somewhere*/
-:root{
-	--nord0: #2e3440;
-	--nord1: #3b4252;
-	--nord2: #434c5e;
-	--nord3: #4c566a;
-	--nord4: #d8dee9;
-	--nord5: #e5e9f0;
-	--nord6: #eceff4;
-	--nord7: #8fbcbb;
-	--nord8: #88c0d0;
-	--nord9: #81a1c1;
-	--nord10: #5e81ac;
-	--nord11: #bf616a;
-	--nord12: #d08770;
-	--nord13: #ebcb8b;
-	--nord14: #a3be8c;
-	--nord15: #b48ead;
+:root {
+    --nord0: #2e3440;
+    --nord1: #3b4252;
+    --nord2: #434c5e;
+    --nord3: #4c566a;
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #eceff4;
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
+    --nord11: #bf616a;
+    --nord12: #d08770;
+    --nord13: #ebcb8b;
+    --nord14: #a3be8c;
+    --nord15: #b48ead;
 }
 
 /* I want to see the weekends, no one has options to see these anymore, not gMail, Outlook, or anything in Obsidian. */
 #calendar-container .weekend {
-  background-color: #2E3132 !important;	
+    background-color: #2E3132 !important;
 }
+
 /* Better dot colors for my Minimal theme config */
-.dot.filled { fill: #647B83 !important;
+.dot.filled {
+    fill: #647B83 !important;
 }
-.hollow.task {stroke: #009EBC !important;
+
+.hollow.task {
+    stroke: #009EBC !important;
 }
 
 #calendar-container tr td {
-	border-radius: 0px !important;
+    border-radius: 0px !important;
 }
 
 .callout {
-	margin:0;
+    margin: 0;
 }
 
 /* Turning tasks backlink into an emoji instead of written text. Much cleaner interface. See my Tasks - Compact.css for the rest of the compactness styling */
@@ -215,63 +268,30 @@ I don't use these currently, just too lazy to remove in case I have ref'd them s
 
 .tasks-backlink a.internal-link {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
-	height: .9em;
-	opacity: 0.6;
+    height: .9em;
+    opacity: 0.6;
 }
 
-.tasks-backlink a.internal-link:hover { opacity:1;}
-
-/* I used to color code my main tags, but I don't anymore. Kept here in case I change my mind because ya never know */
-.cm-tag-journaldaily, .cm-tag-journalweekly, .cm-tag-journalmonthly, .cm-tag-journalyearly, span[class*=cm-tag-journal], .tag[href*="#journal"] {
-  /* background-color: var(--nord14) !important; */
-  /* color: #B2CAD3; */
-}
-span[class*=cm-tag-task], .tag[href*="#task"]  {
-  /* background-color: var(--nord3) !important; */
-  /* color: #E99B19; */
-}
-span[class*=cm-tag-area], .tag[href*="#area"] {
-  /* background-color: var(--nord3) !important; */
-  /* color: #A5A9CE; */
-}
-span[class*=cm-tag-on], .tag[href*="#on"] {
-  /* background-color: var(--nord3) !important; */
-  /* color: #CEFFB8; */
-}
-span[class*=cm-tag-project], .tag[href*="#project"] {
-  /* background-color: var(--nord3) !important; */
-  /* color: #58D6F7; */
-}
-span[class*=cm-tag-idea], .tag[href*="#idea"] {
-  /* background-color: var(--nord3) !important; */
-  /* color: #FF897F; */
-}
-span[class*=cm-tag-source], .tag[href*="#source"] {
-  /* background-color: var(--nord3) !important; */
-  /* color: #FF897F; */
-}
-span[class*=cm-tag-reference], .tag[href*="#reference"], span[class*=cm-tag-archive], .tag[href*="#archive"] {
-  /* background-color: var(--nord3) !important; */
-  /* color: #A9ABAD; */
+.tasks-backlink a.internal-link:hover {
+    opacity: 1;
 }
 
 /* I USE HIDER PLUGIN SO THIS ISN'T NEEDED NOW
 Show Properties in reading mode by default.
 Use "hide_properties" in `css_classes` property to hide them.
 ============================================================= */
-/* .workspace-leaf-content[data-mode="preview"]
-.markdown-preview-view.hide_properties
-.metadata-container{
+.workspace-leaf-content[data-mode="preview"] .markdown-preview-view.hide_properties .metadata-container {
     display: none;
-} */
+}
 
 /* Psudo 'Swimlanes' for Kanban, wish the Dev would implement this (and better)! */
 
-.kanban-plugin__board > div {
+.kanban-plugin__board>div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 40px;
 }
+
 .kanban-plugin__scroll-container.kanban-plugin__horizontal {
     overflow-y: auto;
 }
